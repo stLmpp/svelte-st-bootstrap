@@ -12,12 +12,13 @@
   export let small = false;
   export let disabled = false;
   export let active = false;
+  export let className = '';
 </script>
 
 <button
   on:click
   on:dblclick
-  class="btn"
+  class="btn {className}"
   class:btn-primary={!outline && primary}
   class:btn-secondary={!outline && secondary}
   class:btn-success={!outline && success}
