@@ -7,6 +7,7 @@
   import CardFooter from '$lib/card/CardFooter.svelte';
   import CardImgTop from '$lib/card/CardImgTop.svelte';
   import CardLink from '$lib/card/CardLink.svelte';
+  import Icon from '$lib/icon/Icon.svelte';
 
   let checked = false;
   let indeterminate = false;
@@ -18,7 +19,9 @@
   <CardBody>
     <CardImgTop />
     <CardTitle>Card</CardTitle>
-    <CardText>Teste</CardText>
+    <CardText>
+      <Icon icon="toggles" />
+    </CardText>
     <CardLink>test</CardLink>
   </CardBody>
   <CardFooter>Teste</CardFooter>
