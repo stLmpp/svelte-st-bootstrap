@@ -7,11 +7,10 @@
   import CardFooter from '$lib/card/CardFooter.svelte';
   import CardImgTop from '$lib/card/CardImgTop.svelte';
   import CardLink from '$lib/card/CardLink.svelte';
-  import Icon from '$lib/icon/Icon.svelte';
+  import Button from '$lib/button/Button.svelte';
+  import IconButton from '$lib/button/IconButton.svelte';
 
-  let checked = false;
-  let indeterminate = false;
-  let value = 1;
+  let icon = 'alarm';
 </script>
 
 <Card>
@@ -20,9 +19,14 @@
     <CardImgTop />
     <CardTitle>Card</CardTitle>
     <CardText>
-      <Icon icon="toggles" />
+      <IconButton {icon} primary outline />
+      <IconButton {icon} primary outline small />
+      <IconButton {icon} primary />
+      <IconButton {icon} primary small />
     </CardText>
     <CardLink>test</CardLink>
   </CardBody>
-  <CardFooter>Teste</CardFooter>
+  <CardFooter>
+    <Button on:click={() => (icon = icon === 'toggles' ? 'alarm' : 'toggles')}>Toggle</Button>
+  </CardFooter>
 </Card>
