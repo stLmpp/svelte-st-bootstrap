@@ -14,4 +14,8 @@
   main {
     margin-top: 1rem;
   }
+
+  button {
+    position: relative;
+  }
 </style>

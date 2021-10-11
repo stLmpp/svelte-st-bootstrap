@@ -8,25 +8,23 @@
   import CardImgTop from '$lib/card/CardImgTop.svelte';
   import CardLink from '$lib/card/CardLink.svelte';
   import Button from '$lib/button/Button.svelte';
-  import IconButton from '$lib/button/IconButton.svelte';
+  import Badge from '$lib/badge/Badge.svelte';
 
   let icon = 'alarm';
 </script>
 
 <Card>
-  <CardHeader heading>Teste</CardHeader>
+  <CardHeader heading>Teste <Badge secondary pill>Teste</Badge></CardHeader>
   <CardBody>
     <CardImgTop />
     <CardTitle>Card</CardTitle>
-    <CardText>
-      <IconButton {icon} primary outline />
-      <IconButton {icon} primary outline small />
-      <IconButton {icon} primary />
-      <IconButton {icon} primary small />
-    </CardText>
+    <CardText />
     <CardLink>test</CardLink>
   </CardBody>
   <CardFooter>
-    <Button on:click={() => (icon = icon === 'toggles' ? 'alarm' : 'toggles')}>Toggle</Button>
+    <Button on:click={() => (icon = icon === 'toggles' ? 'alarm' : 'toggles')} primary>
+      Toggle
+      <Badge absolute danger>Te</Badge>
+    </Button>
   </CardFooter>
 </Card>
