@@ -1,16 +1,19 @@
 <script lang="ts">
-  import Alert from '$lib/alert/Alert.svelte';
   import Checkbox from '$lib/checkbox/Checkbox.svelte';
-  import AlertHeading from '$lib/alert/AlertHeading.svelte';
-  import AlertLink from '$lib/alert/AlertLink.svelte';
+  import { random } from 'st-utils';
+  import Icon from '$lib/icon/Icon.svelte';
 
   let dismissed = false;
+
+  let progress = 60;
+
+  let icon = 'alarm';
+
+  setInterval(() => {
+    progress = random(0, 100);
+    icon = icon === 'alarm' ? 'at' : 'alarm';
+  }, 2500);
 </script>
 
 <Checkbox bind:checked={dismissed}>dismissed</Checkbox>
-
-<Alert danger dismissable bind:dismissed on:dismiss={console.log}>
-  <AlertHeading>Heading</AlertHeading>
-  <hr />
-  <AlertLink href="#" target="_blank">Teste</AlertLink>
-</Alert>
+<Icon>alarm</Icon>
