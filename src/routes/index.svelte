@@ -1,14 +1,16 @@
 <script lang="ts">
-  import Button from '$lib/button/Button.svelte';
-  import ButtonToolbar from '$lib/button-group/ButtonToolbar.svelte';
-  import ButtonGroup from '$lib/button-group/ButtonGroup.svelte';
-  import CheckboxButton from '$lib/button/CheckboxButton.svelte';
+  import Alert from '$lib/alert/Alert.svelte';
+  import Checkbox from '$lib/checkbox/Checkbox.svelte';
+  import AlertHeading from '$lib/alert/AlertHeading.svelte';
+  import AlertLink from '$lib/alert/AlertLink.svelte';
+
+  let dismissed = false;
 </script>
 
-<ButtonToolbar>
-  <ButtonGroup>
-    <CheckboxButton primary>Teste</CheckboxButton>
-    <CheckboxButton primary>Teste</CheckboxButton>
-    <CheckboxButton primary>Teste</CheckboxButton>
-  </ButtonGroup>
-</ButtonToolbar>
+<Checkbox bind:checked={dismissed}>dismissed</Checkbox>
+
+<Alert danger dismissable bind:dismissed on:dismiss={console.log}>
+  <AlertHeading>Heading</AlertHeading>
+  <hr />
+  <AlertLink href="#" target="_blank">Teste</AlertLink>
+</Alert>
