@@ -1,10 +1,7 @@
 import type { Readable } from 'svelte/store';
+import { createUidGenerator } from '$lib/util/uid';
 
-let uid = 1;
-
-export function getListRadioUid(): string {
-  return 'list-radio-' + uid++;
-}
+export const getListRadioUid = createUidGenerator('list-radio');
 
 export interface ListRadioContext {
   name: string;

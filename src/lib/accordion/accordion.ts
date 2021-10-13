@@ -1,10 +1,7 @@
 import type { Writable } from 'svelte/store';
+import { createUidGenerator } from '$lib/util/uid';
 
-let uid = 1;
-
-export function getAccordionUid(): string {
-  return 'accordion-item-' + uid++;
-}
+export const getAccordionUid = createUidGenerator('accordion-item');
 
 export interface AccordionStateItem {
   id: string;
